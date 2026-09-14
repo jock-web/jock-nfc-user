@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { Wifi, ArrowRight, Check, CreditCard, Truck, Package } from 'lucide-react';
 
 const products = [
-  { id: 1, name: 'Starter Pack', price: 29, cards: 1, desc: '1 NFC card + QR code' },
-  { id: 2, name: 'Professional Pack', price: 79, cards: 5, desc: '5 NFC cards + QR codes' },
-  { id: 3, name: 'Enterprise Pack', price: 199, cards: -1, desc: 'Unlimited NFC cards' },
+  { id: 1, name: 'Starter Pack', price: 449, cards: 1, desc: '1 NFC card + QR code' },
+  { id: 2, name: 'Professional Pack', price: 2000, cards: 5, desc: '5 NFC cards + QR codes — save ৳245' },
+  { id: 3, name: 'Enterprise Pack', price: 3500, cards: 10, desc: '10 NFC cards + QR codes — save ৳990' },
 ];
 
 export default function OrderPage() {
@@ -26,7 +26,7 @@ export default function OrderPage() {
       <header className="bg-white border-b border-gray-100 px-4 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-blue-700 flex items-center justify-center">
               <Wifi className="w-4 h-4 text-white" />
             </div>
             <span className="text-xl font-bold">TapReview</span>
@@ -77,7 +77,7 @@ export default function OrderPage() {
                     }`}
                   >
                     <div className="text-lg font-bold text-gray-900">{product.name}</div>
-                    <div className="text-2xl font-bold text-blue-600 mt-2">${product.price}</div>
+                    <div className="text-2xl font-bold text-blue-600 mt-2">৳{product.price}</div>
                     <div className="text-sm text-gray-500 mt-1">{product.desc}</div>
                   </button>
                 ))}
@@ -170,7 +170,7 @@ export default function OrderPage() {
                   <div className="text-sm font-medium text-gray-900">{selectedProduct?.name}</div>
                   <div className="text-xs text-gray-500">Order #TR-{Date.now().toString().slice(-6)}</div>
                 </div>
-                <div className="text-lg font-bold text-gray-900">${selectedProduct?.price}</div>
+                <div className="text-lg font-bold text-gray-900">৳{selectedProduct?.price}</div>
               </div>
               <div className="mt-6">
                 <Link href="/login" className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800">

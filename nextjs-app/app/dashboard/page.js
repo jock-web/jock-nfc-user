@@ -41,9 +41,9 @@ export default function DashboardPage() {
         fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/analytics/overview`, { headers }),
       ]);
 
-      if (businessRes.ok) setBusiness((await businessRes.json()).business);
-      if (cardsRes.ok) setCards((await cardsRes.json()).cards);
-      if (statsRes.ok) setStats(await statsRes.json());
+    if (businessRes.ok) setBusiness((await businessRes.json()).data.business);
+    if (cardsRes.ok) setCards((await cardsRes.json()).data.cards);
+    if (statsRes.ok) setStats((await statsRes.json()).data);
     } catch (err) {
       console.error('Failed to fetch data:', err);
     }

@@ -34,11 +34,11 @@ export default function LoginPage() {
       }
 
       // Store token
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+      localStorage.setItem('token', data.data.token);
+      localStorage.setItem('user', JSON.stringify(data.data.user));
 
       // Redirect based on role
-      if (data.user.role === 'admin') {
+      if (data.data.user.role === 'admin') {
         router.push('/admin');
       } else {
         router.push('/dashboard');

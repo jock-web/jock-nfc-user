@@ -9,7 +9,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-blue-700 flex items-center justify-center">
                 <Wifi className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold text-gray-900">TapReview</span>
@@ -184,9 +184,9 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { name: 'Starter', price: '$29', desc: 'Perfect for small businesses', features: ['1 NFC Card', 'QR Code', 'Basic Analytics', '90-day data retention'], popular: false },
-              { name: 'Professional', price: '$79', desc: 'For growing businesses', features: ['5 NFC Cards', 'QR Codes', 'Advanced Analytics', 'Custom branding', 'Priority support'], popular: true },
-              { name: 'Enterprise', price: '$199', desc: 'Multi-location businesses', features: ['Unlimited Cards', 'Full Analytics Suite', 'White-label option', 'API access', 'Dedicated support'], popular: false },
+              { name: 'Starter', price: '৳449', desc: 'Perfect for small businesses', features: ['1 NFC Card', 'QR Code', 'Basic Analytics', '90-day data retention'], popular: false },
+              { name: 'Professional', price: '৳2,000', desc: 'For growing businesses', features: ['5 NFC Cards', 'QR Codes', 'Advanced Analytics', 'Custom branding', 'Priority support'], popular: true },
+              { name: 'Enterprise', price: '৳3,500', desc: 'Multi-location businesses', features: ['10 NFC Cards', 'Full Analytics Suite', 'White-label option', 'API access', 'Dedicated support'], popular: false },
             ].map((plan, i) => (
               <div key={i} className={`p-8 rounded-2xl ${plan.popular ? 'bg-gray-900 text-white ring-2 ring-blue-500 scale-105' : 'bg-white border border-gray-200'}`}>
                 {plan.popular && <div className="text-xs font-bold text-blue-400 mb-2">MOST POPULAR</div>}

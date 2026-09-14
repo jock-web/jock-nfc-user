@@ -45,8 +45,8 @@ export default function AdminPage() {
         fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/businesses`, { headers }),
       ]);
 
-      if (statsRes.ok) setStats((await statsRes.json()).stats);
-      if (bizRes.ok) setBusinesses((await bizRes.json()).businesses);
+      if (statsRes.ok) setStats((await statsRes.json()).data.stats);
+      if (bizRes.ok) setBusinesses((await bizRes.json()).data.businesses);
     } catch (err) {
       console.error('Admin fetch error:', err);
     }
