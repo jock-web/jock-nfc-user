@@ -42,7 +42,7 @@ export default async function RedirectPage({ params }) {
         <title>Redirecting to {cardData.business?.name || 'Business'}...</title>
         <meta name="robots" content="noindex, nofollow" />
         {/* Auto-redirect via meta refresh as fallback */}
-        <meta httpEquiv="refresh" content={`0;url=/api/redirect/${cardId}`} />
+        <meta httpEquiv="refresh" content={`0;url=${apiUrl}/s/${cardId}`} />
         <style>{`
           * { margin: 0; padding: 0; box-sizing: border-box; }
           body { 
@@ -79,8 +79,7 @@ export default async function RedirectPage({ params }) {
           )}
         </div>
         <script dangerouslySetInnerHTML={{ __html: `
-          // Try to redirect immediately via JS
-          window.location.replace('/s/${cardId}?redirect=true');
+          window.location.replace('${apiUrl}/s/${cardId}');
         `}} />
       </body>
     </html>
